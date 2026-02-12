@@ -1,17 +1,11 @@
 from fastmcp import FastMCP
 
-# 1. Creamos el servidor con un nombre identificable
-mcp = FastMCP(name="Mi Primer MCP Server")
+mcp = FastMCP("MiServer")
 
-# 2. Registramos una herramienta simple
 @mcp.tool
-def greet(name: str) -> str:
-    """
-    Saluda a la persona por nombre.
-    """
-    return f"¡Hola, {name}! 👋"
+def suma(a: int, b: int) -> int:
+    return a + b
 
-# 3. Arrancamos el servidor
+# Bloque __main__ es opcional
 if __name__ == "__main__":
-    # El servidor responderá a clientes MCP
     mcp.run()
